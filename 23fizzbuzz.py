@@ -6,8 +6,32 @@
 # For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
 # Note: this is a common interview question
+'''
+for i in range(1, 100):
+	if i % 15 == 0: print('Fizzbuzz')
+	elif i % 3 == 0: print('Fizz')
+	elif i % 5 == 0: print('Buzz')
+	else:
+		print(i)
+		
+# For prime numbers from 1-100 print "*"
 
+for i in range(1,100):
+	# check if number prime
+	isprime = True
+	for a in range(2, i):
+		if i % a == 0:
+			isprime = False
+			break
+	
+	if isprime: print(i, '*')
+	else: print(i)
+'''
 
+for i in range(1,100):
+	if (i ** 0.5) % 1 == 0: print(i, '!')
+	else: print (i)
+	
 """
 python3 23fizzbuzz.py
 1

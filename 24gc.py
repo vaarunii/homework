@@ -5,6 +5,11 @@
 
 dna = 'ACAGAGCCAGCAGATATACAGCAGATACTAT'
 
+num = 0
+for i in dna:
+	if i == 'C' or i == 'G': num += 1
+
+print(f'{num / len(dna):.2f}')
 
 """
 python3 24gc.py

@@ -4,7 +4,9 @@
 
 # Hint: use the 3 argument form of range()
 
-# Your code goes here
+for i in range (5, 50, 7):
+	print(i)
+print('end of program 1')
 
 """
 python3 20loop.py
@@ -15,4 +17,7 @@ python3 20loop.py
 33
 40
 47
+
+# got these results when run in terminal
+
 """
