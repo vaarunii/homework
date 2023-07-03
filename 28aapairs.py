@@ -7,7 +7,18 @@
 
 # Hint: if you get stuck for more than 10 minutes, get help
 
+# Amino acids = A R N D C Q E G H I L K M F P S T W Y V
 
+aa = 'ARNDCQEGHILKMFPSTWYV'
+ap = 0
+
+for i in range(len(aa)):
+	for j in range(i):
+		if aa[i] == aa[j]: continue
+		print(aa[j], aa[i])
+		ap += 1
+print(ap)
+		
 """
 python3 28aapairs.py
 A C

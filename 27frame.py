@@ -8,6 +8,12 @@
 
 dna = 'ATGGCCTTT'
 
+for i in range(len(dna)):
+	frame = 0
+	if i % 3 == 0: frame += 0
+	elif i % 3 == 1: frame += 1
+	else: frame += 2
+	print(f'{i} {frame} {dna[i]}')
 
 """
 python3 27frame.py

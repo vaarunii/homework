@@ -7,21 +7,23 @@
 
 dna = 'ACTGAAAAAAAAAAA'
 
-for i in dna:
-	if i == 'A': print('T', end='')
-	elif i == 'G': print('C', end='')
-	elif i == 'C': print('G', end='')
-	else: print('A', end='')
+cdna = ''
+rdna = ''
 
-print()
 
 for i in range(len(dna)):
-	if dna[i] == 'A': print('T', end='')
-	elif dna[i] == 'G': print('C', end='')
-	elif dna[i] == 'C': print('G', end='')
-	else: print('A', end='')
+	if dna[i] == 'A': cdna += 'T'
+	elif dna[i] == 'G': cdna += 'C'
+	elif dna[i] == 'C': cdna += 'G'
+	else: cdna += 'A'
+print(f'{cdna}')
 
-"""
+for i in range(len(dna)):
+	i += 1
+	rdna += cdna[-i] # -i makes u start from the backmost term -> front
+print(f'{rdna}')
+	
+'''
 python3 26anti.py
 TTTTTTTTTTTCAGT
-"""
+'''

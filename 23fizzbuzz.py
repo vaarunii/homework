@@ -6,7 +6,7 @@
 # For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
 # Note: this is a common interview question
-'''
+
 for i in range(1, 100):
 	if i % 15 == 0: print('Fizzbuzz')
 	elif i % 3 == 0: print('Fizz')
@@ -26,7 +26,7 @@ for i in range(1,100):
 	
 	if isprime: print(i, '*')
 	else: print(i)
-'''
+
 
 for i in range(1,100):
 	if (i ** 0.5) % 1 == 0: print(i, '!')
