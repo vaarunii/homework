@@ -1,5 +1,7 @@
 # dnd3-savingthrow.py
 
+import random 
+
 # One of the core mechanics of D&D is the "saving throw". When certain
 # events happen, you need to roll a d20 to figure out if you succeed or not.
 # For example, you are walking across a frozen lake and it begins to crack
@@ -20,6 +22,23 @@
 # What is the probability of success normally or with advantage/disadvantage?
 # Make a table showing the results.
 
+#regular d20 roll with diff margins of success
+#advantage with two d20s, take bigger value
+#disadvantage with two d20s, take smaller value
+
+trials = 10000
+
+for threshold in range(5, 16, 5):
+	norm = 0
+	adv = 0
+	disadv = 0
+	for j in range(trials):
+		roll = random.randint(1, 20)
+		roll2 = random.randint(1, 20)
+		if roll >= threshold: norm += 1
+		if max(roll, roll2) >= threshold: adv += 1
+		if min(roll, roll2) >= threshold: disadv += 1
+	print(f'{threshold} {norm / trials:.3f} {adv / trials:.3f} {disadv / trials:.3f}')
 
 """
 python3 dnd3-savingthrow.py

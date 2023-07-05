@@ -6,6 +6,29 @@
 # versus all fire saving throws. Which one is better? Make a program that
 # simulates saving throw success at various DCs (1-20) for ring and cloak.
 
+import random
+
+#advantage = 2 dice rolls - pick bigger max(x, y) = ring
+#fire protection = +3 vs. fire saving throws
+
+threshold = 0
+trials = 10000
+
+for threshold in range(20):
+	ring = 0
+	cloak = 0
+	threshold += 1
+	for j in range(trials):
+		roll = random.randint(1, 20)
+		roll2 = random.randint(1, 20)
+		if max(roll, roll2) >= threshold: ring += 1
+	for h in range(trials):
+		roll = random.randint(1, 20)
+		roll += 3
+		if roll >= threshold: cloak += 1
+	print(f'{threshold +1} {ring / trials} {cloak / trials}')
+		
+			
 
 """
 python3 dnd5-fire.py

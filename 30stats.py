@@ -11,18 +11,33 @@ import sys
 
 print(sys.argv)
 
-count = sys.argv
-print(tuple)
-
 count = 0
 for math in sys.argv[1:]:
 	count += 1
 	print(float(math))
 
+sum = 0
+for i in sys.argv[1:]:
+	sum += float(i)
+
+mean = sum / count
+sdtop = 0
+for a in sys.argv[1:]:
+	sdtop += (float(a) - mean) ** 2
+sd = (sdtop / count) ** 0.5
+
+sys.argv.sort()
+sys.argv.remove('30stats.py')
+midind = ((len(sys.argv) -1)/ 2)
+print(midind)
+median = float(sys.argv[2])
+	
 print(f'Count: {count}')
-print(f'Minimum: {min(sys.argv[1:])}')
-print(f'Maximum: {max(sys.argv[1:])}')
-print(f'Mean: {float(sum(sys.argv[1:])} / {count}')
+print(f'Minimum: {float(min(sys.argv[1:]))}')
+print(f'Maximum: {float(max(sys.argv[1:]))}')
+print(f'Mean: {mean:.3f}')
+print(f'Std. dev: {sd:.3f}')
+print(f'Median: {median:.3f}')
 
 """
 python3 30stats.py 3 1 4 1 5

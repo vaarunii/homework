@@ -1,4 +1,5 @@
 # 32xcoverage.py
+import sys
 
 # Write a program that simulates a shotgun resequencing project
 # How uniformly do the reads "pile up" on a chromosome?
@@ -13,7 +14,6 @@
 # Hint: if you are undersampling the ends, do something about it
 
 # Note: you will not get exactly the same results as the command line below
-
 
 """
 python3 32xcoverage.py 1000 100 100

@@ -8,17 +8,20 @@ import random
 # an Elemental Adept? Simulate by rolling dice a million times.
 
 fb = 0
-for i in range(1000000):
+trials = 10000
+for i in range(trials):
 	fb += random.randint(1, 10)
 		
 ea = 0
-for j in range(1000000):
-	ea += 2 * random.randint(1,10)
+for j in range(trials):
+	roll = random.randint(1,10)
+	if roll == 1: roll = 2
+	ea += roll
 
-k = fb / 1000000
-l = ea / 2000000
+k = fb / trials
+l = ea / trials
 m = l - k
-print(f'{m:.3f}')
+print(f'{m:.1f}')
 
 """
 python3 dnd1-elementaladept.py
